@@ -25,7 +25,7 @@ const BEHAVIOURS: { type: BehaviourType; icon: string }[] = [
   { type: 'jumping', icon: '🦘' },
 ];
 
-function formatDate(ts: any): string {
+function formatDate(ts: { toDate?: () => Date } | Date | null): string {
   if (!ts) return '';
   const d = ts.toDate ? ts.toDate() : new Date(ts);
   const now = new Date();

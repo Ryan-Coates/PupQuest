@@ -8,7 +8,7 @@ import { addDogToUser } from '@/lib/firestore/users';
 import { initMilestonesForDog } from '@/lib/firestore/milestones';
 import { Header } from '@/components/layout/Header';
 import { Button } from '@/components/ui/Button';
-import { Input, Select, Textarea } from '@/components/ui/Input';
+import { Input, Textarea } from '@/components/ui/Input';
 import { BehaviourTag } from '@/lib/types';
 
 const BEHAVIOUR_TAGS: { value: BehaviourTag; label: string }[] = [

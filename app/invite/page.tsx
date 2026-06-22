@@ -12,7 +12,7 @@ import { Card } from '@/components/ui/Card';
 import { DogProfile } from '@/lib/types';
 
 export default function InvitePage() {
-  const { user, userProfile, refreshProfile } = useAuth();
+  const { user, refreshProfile } = useAuth();
   const router = useRouter();
   const [code, setCode] = useState('');
   const [found, setFound] = useState<DogProfile | null>(null);
@@ -107,6 +107,7 @@ export default function InvitePage() {
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-2xl bg-indigo-100 flex items-center justify-center text-2xl">
                 {found.photoURL ? (
+
                   <img src={found.photoURL} alt={found.name} className="w-full h-full object-cover rounded-2xl" />
                 ) : '🐶'}
               </div>
@@ -121,7 +122,7 @@ export default function InvitePage() {
               onClick={handleJoin}
               loading={joining}
             >
-              Join {found.name}'s profile 🐾
+              Join {found.name}&apos;s profile 🐾
             </Button>
           </Card>
         )}
@@ -129,7 +130,7 @@ export default function InvitePage() {
         <div className="mt-8 p-4 bg-amber-50 rounded-2xl border border-amber-100">
           <h3 className="text-sm font-bold text-amber-800 mb-1">💡 Find your invite code</h3>
           <p className="text-xs text-amber-700">
-            Ask your partner to go to their dog's profile page, then tap "Share" to see the invite code.
+            Ask your partner to go to their dog&apos;s profile page, then tap &ldquo;Share&rdquo; to see the invite code.
           </p>
         </div>
       </main>

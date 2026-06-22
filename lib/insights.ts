@@ -10,7 +10,6 @@ export function generateInsights(
   const now = Date.now();
   const oneDay = 1000 * 60 * 60 * 24;
   const sevenDays = 7 * oneDay;
-  const fiveDays = 5 * oneDay;
 
   // Walk frequency check
   const recentWalks = walks.filter((w) => now - w.timestamp.toMillis() < sevenDays);
@@ -38,11 +37,6 @@ export function generateInsights(
   }
 
   // Training frequency
-  const recentTraining = training.filter((t) => now - t.timestamp.toMillis() < fiveDays);
-  const recallTraining = training.filter(
-    (t) => t.type === 'recall' && now - t.timestamp.toMillis() < fiveDays * 24 * 60 * 60 * 1000
-  );
-
   if (training.length > 0) {
     const lastTraining = training[0];
     const daysSince = Math.floor((now - lastTraining.timestamp.toMillis()) / oneDay);

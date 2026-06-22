@@ -11,7 +11,7 @@ import { StarRating } from '@/components/ui/StarRating';
 import { Spinner } from '@/components/ui/Spinner';
 import { TRAINING_TYPE_LABELS, DIFFICULTY_LABELS } from '@/lib/constants';
 
-function formatDate(ts: any): string {
+function formatDate(ts: { toDate?: () => Date } | Date | null): string {
   if (!ts) return '';
   const d = ts.toDate ? ts.toDate() : new Date(ts);
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });

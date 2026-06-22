@@ -11,10 +11,9 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Header } from '@/components/layout/Header';
 import { XPBar } from '@/components/ui/XPBar';
-import { getLevelFromXP } from '@/lib/xp';
 
 export default function DashboardPage() {
-  const { user, userProfile, loading, refreshProfile } = useAuth();
+  const { user, userProfile, loading } = useAuth();
   const router = useRouter();
   const [dogs, setDogs] = useState<DogProfile[]>([]);
   const [dogsLoading, setDogsLoading] = useState(true);
@@ -68,7 +67,6 @@ export default function DashboardPage() {
         ) : (
           <div className="flex flex-col gap-4">
             {dogs.map((dog) => {
-              const levelInfo = getLevelFromXP(dog.xp);
               return (
                 <Link key={dog.id} href={`/dogs/${dog.id}/dashboard`}>
                   <Card hoverable className="p-4">

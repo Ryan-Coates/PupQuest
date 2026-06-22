@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 export function Header({ title, backHref, actions }: HeaderProps) {
-  const { user, userProfile, signOut } = useAuth();
+  const { user, signOut } = useAuth();
 
   return (
     <header className="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-gray-100">

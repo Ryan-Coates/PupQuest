@@ -8,7 +8,6 @@ import { useMilestones } from '@/hooks/useMilestones';
 import { Header } from '@/components/layout/Header';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Spinner } from '@/components/ui/Spinner';
 import { BEHAVIOUR_LABELS, TRAINING_TYPE_LABELS } from '@/lib/constants';
 
 type FeedItem = {

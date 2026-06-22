@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname, useParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const NAV_ITEMS = [
   { href: '/dashboard', icon: '🏠', label: 'Home' },

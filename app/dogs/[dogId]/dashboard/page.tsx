@@ -42,7 +42,6 @@ export default function DogDashboard({ params }: { params: { dogId: string } }) 
   const levelInfo = getLevelFromXP(dog.xp);
   const insights = generateInsights(walks, sessions, behaviours);
   const recentWalks = walks.slice(0, 3);
-  const recentTraining = sessions.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-gray-50">

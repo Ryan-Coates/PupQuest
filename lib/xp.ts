@@ -1,4 +1,4 @@
-import { Walk, TrainingSession, Difficulty, LevelInfo } from './types';
+import { Walk, Difficulty, LevelInfo } from './types';
 import { XP_VALUES, LEVELS, DIFFICULTY_XP_MULTIPLIER } from './constants';
 
 export function calculateWalkXP(walk: Omit<Walk, 'id' | 'xpGained'>): number {
