@@ -1,0 +1,26 @@
+import React from 'react';
+
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: 'default' | 'success' | 'warning' | 'danger' | 'info' | 'xp';
+  className?: string;
+}
+
+export function Badge({ children, variant = 'default', className = '' }: BadgeProps) {
+  const variants = {
+    default: 'bg-gray-100 text-gray-600',
+    success: 'bg-green-100 text-green-700',
+    warning: 'bg-amber-100 text-amber-700',
+    danger: 'bg-red-100 text-red-700',
+    info: 'bg-blue-100 text-blue-700',
+    xp: 'bg-indigo-100 text-indigo-700',
+  };
+
+  return (
+    <span
+      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${variants[variant]} ${className}`}
+    >
+      {children}
+    </span>
+  );
+}
